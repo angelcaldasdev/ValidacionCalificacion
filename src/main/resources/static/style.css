@@ -1,0 +1,195 @@
+/* ===== Estilos generales ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px 16px;
+    color: #1e293b;
+    background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #06b6d4 100%);
+}
+
+.contenedor {
+    width: 100%;
+    max-width: 460px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* ===== Encabezado ===== */
+.encabezado {
+    text-align: center;
+    color: #ffffff;
+}
+
+.etiqueta {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    margin-bottom: 12px;
+    backdrop-filter: blur(6px);
+}
+
+.encabezado h1 {
+    font-size: 1.9rem;
+    margin-bottom: 6px;
+}
+
+.encabezado p {
+    opacity: 0.9;
+    font-size: 0.95rem;
+}
+
+/* ===== Tarjetas ===== */
+.tarjeta {
+    background: #ffffff;
+    padding: 26px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== Formulario ===== */
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 16px;
+    flex: 1;
+    min-width: 0; /* Evita que los elementos flexibles se desborden */
+}
+
+.fila {
+    display: flex;
+    gap: 14px;
+}
+
+label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #475569;
+}
+
+input {
+    width: 100%; /* <-- Asegura que ocupe todo el ancho de su caja */
+    padding: 12px 14px;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus {
+    border-color: #6366f1;
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.15);
+}
+
+.mensaje-error {
+    background: #fee2e2;
+    color: #b91c1c;
+    padding: 10px 14px;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    margin-bottom: 14px;
+}
+
+/* ===== Botón ===== */
+.boton {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #ffffff;
+    cursor: pointer;
+    background: linear-gradient(135deg, #4f46e5, #7c3aed);
+    transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.boton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(79, 70, 229, 0.4);
+}
+
+.boton:active {
+    transform: translateY(0);
+}
+
+/* ===== Resultados ===== */
+.resultados h2 {
+    font-size: 1.2rem;
+    margin-bottom: 14px;
+}
+
+.lista-resultados {
+    list-style: none;
+}
+
+.lista-resultados li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.lista-resultados li:last-child {
+    border-bottom: none;
+}
+
+.lista-resultados span {
+    color: #64748b;
+    font-size: 0.9rem;
+}
+
+/* Etiquetas de colores según clasificación / estado */
+.insignia {
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    color: #ffffff;
+}
+
+.desaprobado { background: #ef4444; }
+.regular     { background: #f59e0b; }
+.bueno       { background: #3b82f6; }
+.excelente   { background: #10b981; }
+.aprobo      { background: #10b981; }
+.no-aprobo   { background: #ef4444; }
+.invalido    { background: #94a3b8; }
+
+/* Animación de entrada de resultados */
+.resultados {
+    animation: aparecer 0.4s ease;
+}
+
+@keyframes aparecer {
+    from { opacity: 0; transform: translateY(15px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== Pie de página ===== */
+.pie {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.8rem;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 480px) {
+    .fila {
+        flex-direction: column;
+        gap: 0;
+    }
+}
